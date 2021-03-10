@@ -13,8 +13,81 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 	<link rel="icon" href="./favicon.png">
     <title>2due</title>
+    <style>
+        .cool-animate-gradient-on-hover{
+            /*background-size: 100%;*/
+            /*background-image: linear-gradient(#fff, #fff);*/
+            border-radius: 0.45rem;
+            /*border: 1px solid #ddd;*/
+            cursor: pointer;
+            color: #333;
+            /*display: inline-block;*/
+            font-size: 1.25rem;
+            font-weight: 300;
+            /*padding: 1rem 1.5rem;*/
+            position: relative;
+            z-index: 100;
+            /*transition: opacity 1.0s;*/
+        }
+        .cool-animate-gradient-on-hover:before{
+            /*border-radius: inherit;*/
+            background-image: linear-gradient(#fff,#b5b5ff);
+            content: '';
+            /*display: block;*/
+            height: 100%;
+            position: absolute;
+            top: 0; left: 0;
+            opacity: 0;
+            width: 100%;
+            z-index: -100;
+            transition: opacity .5s;
+        }
+        .cool-animate-gradient-on-hover:hover:before{
+            opacity: 1;
+        }
 
+        .gradient-animator-calm{
+
+        }
+        .gradient-animator-calm:before{
+            background-image: linear-gradient(#fff,#b5b5ff);
+        }
+        .gradient-animator-calm:hover:before{
+
+        }
+        gradient-animator-alert{
+
+        }
+        .gradient-animator-alert:before{
+            background-image: linear-gradient(#fff,#ffff80);
+        }
+        .gradient-animator-alert:hover:before{
+
+        }
+        gradient-animator-urgent{
+
+        }
+        .gradient-animator-urgent:before{
+            background-image: linear-gradient(#fff,#ffb7b5);
+        }
+        .gradient-animator-urgent:hover:before{
+
+        }
+        header{
+
+        }
+        nav{
+
+        }
+        main{
+
+        }
+        div{
+
+        }
+    </style>
 </head>
+<body>
 <header id="top" class="w-full flex flex-col fixed sm:relative bg-white pin-t pin-r pin-l">
     <nav id="site-menu" class="flex flex-col sm:flex-row w-full justify-between items-center px-4 sm:px-6 py-1 bg-white shadow sm:shadow-none border-b-4 border-teal-500">
         <div class="w-full sm:w-auto self-start sm:self-center flex flex-row sm:flex-none flex-no-wrap justify-between items-center">
@@ -26,6 +99,7 @@
         </div>
         <div id="menu" class="w-full sm:w-auto self-end sm:self-center sm:flex flex-col sm:flex-row items-center h-full py-1 pb-4 sm:py-0 sm:pb-0 hidden">
             <a class="text-dark font-strong hover:text-red text-lg w-full no-underline sm:w-auto sm:pr-4 py-2 sm:py-1 sm:pt-2" href="register/">Register</a>
+            <a class="text-dark font-strong hover:text-red text-lg w-full no-underline sm:w-auto sm:pr-4 py-2 sm:py-1 sm:pt-2" href="login/">Login</a>
         </div>
     </nav>
 </header>
@@ -42,39 +116,39 @@
 
 
         <!-- Component Start -->
-        <div class="flex p-10 space-x-4 overflow-auto text-gray-700 justify-center mx-auto">
-            <div class="flex flex-col  w-64 bg-gray-200 border border-gray-300">
-                <div class="flex items-center justify-between h-10 px-2 border-b border-gray-300 bg-white">
+        <div class="flex p-10 space-x-4 overflow-auto text-gray-700 justify-center mx-auto"  style="text-align: center;">
+            <div class="flex flex-col  w-64 bg-gray-200 border border-gray-300"  style="text-align: center;">
+                <div class="flex items-center justify-between h-10 px-2 border-b border-gray-300 bg-white" style="justify-content: center">
                     <span class="block text-sm font-medium">Could do</span>
-
                 </div>
+
                 <div class="flex flex-col px-2 pb-2 ">
-                    <div class="p-6 mt-2 border border-gray-300 bg-white cursor-pointer">Homework</div>
-                    <div class="p-6 mt-2 border border-gray-300 bg-white cursor-pointer">Gym</div>
-                    <div class="p-6 mt-2 border border-gray-300 bg-white cursor-pointer">Cook</div>
+                    <div class="brother cool-animate-gradient-on-hover gradient-animator-calm p-6 mt-2 border border-gray-300 bg-white cursor-pointer">Homework</div>
+                    <div class="cool-animate-gradient-on-hover gradient-animator-calm p-6 mt-2 border border-gray-300 bg-white cursor-pointer">Gym</div>
+                    <div class="cool-animate-gradient-on-hover gradient-animator-calm p-6 mt-2 border border-gray-300 bg-white cursor-pointer">Cook</div>
 
                 </div>
             </div>
             <div class="flex pt-10 pb-10 space-x-4 overflow-auto text-gray-700">
                 <div class="flex flex-col  w-64 bg-gray-200 border border-gray-300">
-                    <div class="flex items-center justify-between  h-10 px-2 border-b border-gray-300 bg-white">
+                    <div class="flex items-center justify-between  h-10 px-2 border-b border-gray-300 bg-white" style="justify-content: center">
                         <span class="block text-sm font-medium">Should do</span>
 
                     </div>
                     <div class="flex flex-col px-2 pb-2 ">
-                        <div class="p-6 mt-2 border border-gray-300 bg-white cursor-pointer">Study for exam</div>
-                        <div class="p-6 mt-2 border border-gray-300 bg-white cursor-pointer">Fasfa	</div>
+                        <div class="cool-animate-gradient-on-hover gradient-animator-alert p-6 mt-2 border border-gray-300 bg-white cursor-pointer">Study for exam</div>
+                        <div class="cool-animate-gradient-on-hover gradient-animator-alert p-6 mt-2 border border-gray-300 bg-white cursor-pointer">Fasfa	</div>
                     </div>
 					
                 </div>
                 <div class="flex pt-10 pb-10 space-x-4 flex-shrink	 overflow-auto text-gray-700">
                     <div class="flex flex-col  w-64 bg-gray-200 border border-gray-300">
-                        <div class="flex items-center justify-between 0 h-10 px-2 border-b border-gray-300 bg-white">
+                        <div class="flex items-center justify-between 0 h-10 px-2 border-b border-gray-300 bg-white" style="justify-content: center">
                             <span class="block text-sm font-medium">Must do</span>
 
                         </div>
                         <div class="flex flex-col px-2 pb-2 ">
-                            <div class="p-6 mt-2 border border-gray-300 bg-white cursor-pointer">Register for classes</div>
+                            <div class="cool-animate-gradient-on-hover gradient-animator-urgent p-6 mt-2 border border-gray-300 bg-white cursor-pointer">Register for classes</div>
                         </div>
                     </div>
 					
