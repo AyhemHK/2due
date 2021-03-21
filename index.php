@@ -123,9 +123,16 @@
                 </div>
 
                 <div class="flex flex-col px-2 pb-2 ">
-                    <div class="brother cool-animate-gradient-on-hover gradient-animator-calm p-6 mt-2 border border-gray-300 bg-white cursor-pointer">Homework</div>
-                    <div class="cool-animate-gradient-on-hover gradient-animator-calm p-6 mt-2 border border-gray-300 bg-white cursor-pointer">Gym</div>
-                    <div class="cool-animate-gradient-on-hover gradient-animator-calm p-6 mt-2 border border-gray-300 bg-white cursor-pointer">Cook</div>
+                    <form action="data.php">
+                        <br>
+                        <textarea id="coulddo1" name="coulddo1" rows="4" cols="30">Homework</textarea>
+                        <textarea id="coulddo2" name="coulddo2" rows="4" cols="30">Homework</textarea>
+                        <textarea id="coulddo3" name="coulddo3" rows="4" cols="30">Homework</textarea>
+                        <button type="submit" class="h-12 w-full bg-red-600 text-white rounded hover:bg-red-700">Submit <i class="fa fa-long-arrow-right"></i></button>
+                    </form>
+                    <!--<div class="brother cool-animate-gradient-on-hover gradient-animator-calm p-6 mt-2 border border-gray-300 bg-white cursor-pointer">Homework</div>-->
+                    <!--<div class="cool-animate-gradient-on-hover gradient-animator-calm p-6 mt-2 border border-gray-300 bg-white cursor-pointer">Gym</div>-->
+                    <!--<div class="cool-animate-gradient-on-hover gradient-animator-calm p-6 mt-2 border border-gray-300 bg-white cursor-pointer">Cook</div>-->
 
                 </div>
             </div>

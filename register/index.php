@@ -39,7 +39,7 @@
                 <div class="text-center"> <span class="text-xl text-gray-700">Registration Form</span> </div>
 				<form action="register.php" method="post">
                 <div class="mt-4 relative"> <span class="absolute p-1 bottom-8 ml-2 bg-white text-gray-400 ">Username</span> <input id="username" name="username" type="text" type="text" class="h-12 px-2 w-full border-2 rounded focus:outline-none focus:border-red-600"> </div>
-                <div class="mt-4 relative"> <span class="absolute p-1 bottom-8 ml-2 bg-white text-gray-400 ">Email</span> <input id="email" type="email" class="h-12 px-2 w-full border-2 rounded focus:outline-none focus:border-red-600"> </div>
+                <div class="mt-4 relative"> <span class="absolute p-1 bottom-8 ml-2 bg-white text-gray-400 ">Email</span> <input id="email" name="email" type="email" class="h-12 px-2 w-full border-2 rounded focus:outline-none focus:border-red-600"> </div>
                 <div class="mt-4 relative"> <span class="absolute p-1 bottom-8 ml-2 bg-white text-gray-400 ">Password</span> <input id="password" name="password" type="password" autocomplete="current-password" type="text" class="h-12 px-2 w-full border-2 rounded focus:outline-none focus:border-red-600"> </div>
                 <div class="mt-4"> <button type="submit" class="h-12 w-full bg-red-600 text-white rounded hover:bg-red-700">Click to register <i class="fa fa-long-arrow-right"></i></button> </div>
 				</form>

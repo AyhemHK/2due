@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 include_once('dbclass.php');
 
 try {
-    $conn = new PDO('mysql:host=' . $hostname . ';dbname=' . $dbname . ';charset=utf8', $username , $password);;
+    $conn = new PDO('mysql:host=' . $hostname . ';dbname=' . $dbname . ';charset=utf8', $username , $password);
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -18,7 +18,7 @@ VALUES ('$zusername', '$zemail', '$zpassword')";
     $conn->exec($sql);
     echo "New record created successfully";
 	$successmsg = "";
-	header("Location: https://imperfectandcompany.com/2due/register/");	
+	header("Location: http://localhost/2due/");
 	
 } catch(PDOException $e) {
     echo $sql . "<br>" . $e->getMessage();
