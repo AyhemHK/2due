@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 
 <!doctype html>
 <html lang="en">
@@ -99,7 +102,13 @@
         </div>
         <div id="menu" class="w-full sm:w-auto self-end sm:self-center sm:flex flex-col sm:flex-row items-center h-full py-1 pb-4 sm:py-0 sm:pb-0 hidden">
             <a class="text-dark font-strong hover:text-red text-lg w-full no-underline sm:w-auto sm:pr-4 py-2 sm:py-1 sm:pt-2" href="register/">Register</a>
-            <a class="text-dark font-strong hover:text-red text-lg w-full no-underline sm:w-auto sm:pr-4 py-2 sm:py-1 sm:pt-2" href="login/">Login</a>
+            <?php
+            if (isset($_SESSION["userid"])){
+                echo "<a class='text-dark font-strong hover:text-red text-lg w-full no-underline sm:w-auto sm:pr-4 py-2 sm:py-1 sm:pt-2' href='logout/'>Logout</a>";
+            }else {
+                echo "<a class='text-dark font-strong hover:text-red text-lg w-full no-underline sm:w-auto sm:pr-4 py-2 sm:py-1 sm:pt-2' href='login/'>Login</a>";
+            }
+            ?>
         </div>
     </nav>
 </header>
@@ -123,17 +132,20 @@
                 </div>
 
                 <div class="flex flex-col px-2 pb-2 ">
-                    <form action="data.php">
-                        <br>
-                        <textarea id="coulddo1" name="coulddo1" rows="4" cols="30">Homework</textarea>
-                        <textarea id="coulddo2" name="coulddo2" rows="4" cols="30">Homework</textarea>
-                        <textarea id="coulddo3" name="coulddo3" rows="4" cols="30">Homework</textarea>
-                        <button type="submit" class="h-12 w-full bg-red-600 text-white rounded hover:bg-red-700">Submit <i class="fa fa-long-arrow-right"></i></button>
-                    </form>
-                    <!--<div class="brother cool-animate-gradient-on-hover gradient-animator-calm p-6 mt-2 border border-gray-300 bg-white cursor-pointer">Homework</div>-->
-                    <!--<div class="cool-animate-gradient-on-hover gradient-animator-calm p-6 mt-2 border border-gray-300 bg-white cursor-pointer">Gym</div>-->
-                    <!--<div class="cool-animate-gradient-on-hover gradient-animator-calm p-6 mt-2 border border-gray-300 bg-white cursor-pointer">Cook</div>-->
-
+                    <?php
+                    if (isset($_SESSION["userid"])){
+                        echo "<form action='data.php'><br>";
+                        echo "<textarea id='coulddo1' name='coulddo1' rows='4' cols='30'>Homework</textarea>";
+                        echo "<textarea id='coulddo2' name='coulddo2' rows='4' cols='30'>Homework</textarea>";
+                        echo "<textarea id='coulddo3' name='coulddo3' rows='4' cols='30'>Homework</textarea>";
+                        echo "<button type='submit' class='h-12 w-full bg-red-600 text-white rounded hover:bg-red-700'>Submit <i class='fa fa-long-arrow-right'></i></button>";
+                        echo "</form>";
+                    }else {
+                        echo "<div class='brother cool-animate-gradient-on-hover gradient-animator-calm p-6 mt-2 border border-gray-300 bg-white cursor-pointer'>Homework</div>";
+                        echo "<div class='cool-animate-gradient-on-hover gradient-animator-calm p-6 mt-2 border border-gray-300 bg-white cursor-pointer'>Gym</div>";
+                        echo "<div class='cool-animate-gradient-on-hover gradient-animator-calm p-6 mt-2 border border-gray-300 bg-white cursor-pointer'>Cook</div>";
+                    }
+                    ?>
                 </div>
             </div>
             <div class="flex pt-10 pb-10 space-x-4 overflow-auto text-gray-700">
@@ -143,10 +155,19 @@
 
                     </div>
                     <div class="flex flex-col px-2 pb-2 ">
-                        <div class="cool-animate-gradient-on-hover gradient-animator-alert p-6 mt-2 border border-gray-300 bg-white cursor-pointer">Study for exam</div>
-                        <div class="cool-animate-gradient-on-hover gradient-animator-alert p-6 mt-2 border border-gray-300 bg-white cursor-pointer">Fasfa	</div>
+                        <?php
+                        if (isset($_SESSION["userid"])){
+                            echo "<form action='data.php'><br>";
+                            echo "<textarea id='coulddo5' name='coulddo5' rows='4' cols='30'>Study</textarea>";
+                            echo "<textarea id='coulddo6' name='coulddo6' rows='4' cols='30'>Study</textarea>";
+                            echo "<button type='submit' class='h-12 w-full bg-red-600 text-white rounded hover:bg-red-700'>Submit <i class='fa fa-long-arrow-right'></i></button>";
+                            echo "</form>";
+                        }else {
+                            echo "<div class='cool-animate-gradient-on-hover gradient-animator-alert p-6 mt-2 border border-gray-300 bg-white cursor-pointer'>Study for exam</div>";
+                            echo "<div class='cool-animate-gradient-on-hover gradient-animator-alert p-6 mt-2 border border-gray-300 bg-white cursor-pointer'>Fasfa	</div>";
+                        }
+                        ?>
                     </div>
-					
                 </div>
                 <div class="flex pt-10 pb-10 space-x-4 flex-shrink	 overflow-auto text-gray-700">
                     <div class="flex flex-col  w-64 bg-gray-200 border border-gray-300">
@@ -155,7 +176,16 @@
 
                         </div>
                         <div class="flex flex-col px-2 pb-2 ">
-                            <div class="cool-animate-gradient-on-hover gradient-animator-urgent p-6 mt-2 border border-gray-300 bg-white cursor-pointer">Register for classes</div>
+                            <?php
+                            if (isset($_SESSION["userid"])){
+                                echo "<form action='data.php'><br>";
+                                echo "<textarea id='coulddo5' name='coulddo5' rows='4' cols='30'>Register for classes</textarea>";
+                                echo "<button type='submit' class='h-12 w-full bg-red-600 text-white rounded hover:bg-red-700'>Submit <i class='fa fa-long-arrow-right'></i></button>";
+                                echo "</form>";
+                            }else {
+                                echo "<div class='cool-animate-gradient-on-hover gradient-animator-urgent p-6 mt-2 border border-gray-300 bg-white cursor-pointer'>Register for classes</div>";
+                            }
+                            ?>
                         </div>
                     </div>
 					
