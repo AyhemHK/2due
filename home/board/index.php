@@ -1,10 +1,10 @@
 <?php
 
 
-$username = "";
-$dbhost = "";
+$username = "root";
+$dbhost = "localhost";
 $dbpass = "";
-$dbname = "";
+$dbname = "2due";
 
 
 try {
