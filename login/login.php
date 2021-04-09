@@ -35,9 +35,11 @@ try {
     }
 
     if ($password === $zpassword){
+        session_id($uId);
         session_start();
         $_SESSION["userid"] = $uId;
-        header("location: http://localhost/2due?session=" . $uId);
+
+        header("location: http://localhost/2due?session=" . session_id());
         exit();
     }
     else {

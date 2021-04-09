@@ -134,12 +134,27 @@ session_start();
                 <div class="flex flex-col px-2 pb-2 ">
                     <?php
                     if (isset($_SESSION["userid"])){
-                        echo "<form action='data.php'><br>";
-                        echo "<textarea id='coulddo1' name='coulddo1' rows='4' cols='30'>Homework</textarea>";
+                        echo'<form action="kanbanuser.php" method="post">';
+                        echo'<div class="mt-4 relative"> <span class="absolute p-1 bottom-8 ml-2 bg-white text-gray-400 ">Coulddo</span> <input id="coulddo1" name="coulddo1" type="text" type="text" class="h-12 px-2 w-full border-2 rounded focus:outline-none focus:border-red-600"> </div>';
+                        echo'<div class="mt-4 relative"> <span class="absolute p-1 bottom-8 ml-2 bg-white text-gray-400 ">Coulddo</span> <input id="coulddo2" name="coulddo2" type="text" class="h-12 px-2 w-full border-2 rounded focus:outline-none focus:border-red-600"> </div>';
+                        echo'<div class="mt-4 relative"> <span class="absolute p-1 bottom-8 ml-2 bg-white text-gray-400 ">Coulddo</span> <input id="coulddo3" name="coulddo3" type="text" type="text" class="h-12 px-2 w-full border-2 rounded focus:outline-none focus:border-red-600"> </div>';
+                        echo'<div class="mt-4 relative"> <span class="absolute p-1 bottom-8 ml-2 bg-white text-gray-400 ">Coulddo</span> <input id="coulddo4" name="coulddo4" type="text" type="text" class="h-12 px-2 w-full border-2 rounded focus:outline-none focus:border-red-600"> </div>';
+                        echo'<div class="mt-4 relative"> <span class="absolute p-1 bottom-8 ml-2 bg-white text-gray-400 ">Coulddo</span> <input id="coulddo5" name="coulddo5" type="text" class="h-12 px-2 w-full border-2 rounded focus:outline-none focus:border-red-600"> </div>';
+                        echo'<div class="mt-4 relative"> <span class="absolute p-1 bottom-8 ml-2 bg-white text-gray-400 ">Coulddo</span> <input id="coulddo6" name="coulddo6" type="text" type="text" class="h-12 px-2 w-full border-2 rounded focus:outline-none focus:border-red-600"> </div>';
+                        echo'<div class="mt-4"> <button type="submit" class="h-12 w-full bg-red-600 text-white rounded hover:bg-red-700">Click to Submit <i class="fa fa-long-arrow-right"></i></button> </div>';
+                        echo'</form>';
+                        /*echo "<form action='kanbanuser.php'><br>";
+                        echo "<input id='coulddo1' name='coulddo1' type='text' class='h-12 px-2 w-full border-2 rounded focus:outline-none focus:border-red-600'>";
                         echo "<textarea id='coulddo2' name='coulddo2' rows='4' cols='30'>Homework</textarea>";
                         echo "<textarea id='coulddo3' name='coulddo3' rows='4' cols='30'>Homework</textarea>";
+
+                        echo "<textarea id='coulddo4' name='coulddo4' rows='4' cols='30'>Study</textarea>";
+                        echo "<textarea id='coulddo5' name='coulddo5' rows='4' cols='30'>Study</textarea>";
+
+                        echo "<textarea id='coulddo6' name='coulddo6' rows='4' cols='30'>Register for classes</textarea>";
+
                         echo "<button type='submit' class='h-12 w-full bg-red-600 text-white rounded hover:bg-red-700'>Submit <i class='fa fa-long-arrow-right'></i></button>";
-                        echo "</form>";
+                        echo "</form>";*/
                     }else {
                         echo "<div class='brother cool-animate-gradient-on-hover gradient-animator-calm p-6 mt-2 border border-gray-300 bg-white cursor-pointer'>Homework</div>";
                         echo "<div class='cool-animate-gradient-on-hover gradient-animator-calm p-6 mt-2 border border-gray-300 bg-white cursor-pointer'>Gym</div>";
@@ -148,7 +163,7 @@ session_start();
                     ?>
                 </div>
             </div>
-            <div class="flex pt-10 pb-10 space-x-4 overflow-auto text-gray-700">
+            <!--<div class="flex pt-10 pb-10 space-x-4 overflow-auto text-gray-700">
                 <div class="flex flex-col  w-64 bg-gray-200 border border-gray-300">
                     <div class="flex items-center justify-between  h-10 px-2 border-b border-gray-300 bg-white" style="justify-content: center">
                         <span class="block text-sm font-medium">Should do</span>
@@ -156,7 +171,7 @@ session_start();
                     </div>
                     <div class="flex flex-col px-2 pb-2 ">
                         <?php
-                        if (isset($_SESSION["userid"])){
+                        /*if (isset($_SESSION["userid"])){
                             echo "<form action='data.php'><br>";
                             echo "<textarea id='coulddo5' name='coulddo5' rows='4' cols='30'>Study</textarea>";
                             echo "<textarea id='coulddo6' name='coulddo6' rows='4' cols='30'>Study</textarea>";
@@ -165,7 +180,7 @@ session_start();
                         }else {
                             echo "<div class='cool-animate-gradient-on-hover gradient-animator-alert p-6 mt-2 border border-gray-300 bg-white cursor-pointer'>Study for exam</div>";
                             echo "<div class='cool-animate-gradient-on-hover gradient-animator-alert p-6 mt-2 border border-gray-300 bg-white cursor-pointer'>Fasfa	</div>";
-                        }
+                        }*/
                         ?>
                     </div>
                 </div>
@@ -177,19 +192,19 @@ session_start();
                         </div>
                         <div class="flex flex-col px-2 pb-2 ">
                             <?php
-                            if (isset($_SESSION["userid"])){
+                            /*if (isset($_SESSION["userid"])){
                                 echo "<form action='data.php'><br>";
                                 echo "<textarea id='coulddo5' name='coulddo5' rows='4' cols='30'>Register for classes</textarea>";
                                 echo "<button type='submit' class='h-12 w-full bg-red-600 text-white rounded hover:bg-red-700'>Submit <i class='fa fa-long-arrow-right'></i></button>";
                                 echo "</form>";
                             }else {
                                 echo "<div class='cool-animate-gradient-on-hover gradient-animator-urgent p-6 mt-2 border border-gray-300 bg-white cursor-pointer'>Register for classes</div>";
-                            }
+                            }*/
                             ?>
                         </div>
                     </div>
 					
-					</div>
+					</div>-->
 
 					</div>
 
