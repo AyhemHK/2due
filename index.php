@@ -118,8 +118,14 @@ session_start();
 
 
 
+        <?php
+        if (isset($_SESSION["userid"])){
+            ?><h1 class="text-4xl text-teal-500">Prioritize your goals <?php echo $_SESSION["username"];?>.</h1><?php
+        }else{
+            ?><h1 class="text-4xl text-teal-500">Prioritize your goals.</h1><?php
+        }
+        ?>
 
-        <h1 class="text-4xl text-teal-500">Prioritize your goals.</h1>
 
 
 
@@ -127,6 +133,10 @@ session_start();
         <!-- Component Start -->
         <div class="flex p-10 space-x-4 overflow-auto text-gray-700 justify-center mx-auto"  style="text-align: center;">
             <div class="flex flex-col  w-64 bg-gray-200 border border-gray-300"  style="text-align: center;">
+                <?php
+
+                echo'<form action="kanbanuser.php" method="post">';
+                ?>
                 <div class="flex items-center justify-between h-10 px-2 border-b border-gray-300 bg-white" style="justify-content: center">
                     <span class="block text-sm font-medium">Could do</span>
                 </div>
@@ -134,15 +144,13 @@ session_start();
                 <div class="flex flex-col px-2 pb-2 ">
                     <?php
                     if (isset($_SESSION["userid"])){
-                        echo'<form action="kanbanuser.php" method="post">';
-                        echo'<div class="mt-4 relative"> <span class="absolute p-1 bottom-8 ml-2 bg-white text-gray-400 ">Coulddo</span> <input id="coulddo1" name="coulddo1" type="text" type="text" class="h-12 px-2 w-full border-2 rounded focus:outline-none focus:border-red-600"> </div>';
-                        echo'<div class="mt-4 relative"> <span class="absolute p-1 bottom-8 ml-2 bg-white text-gray-400 ">Coulddo</span> <input id="coulddo2" name="coulddo2" type="text" class="h-12 px-2 w-full border-2 rounded focus:outline-none focus:border-red-600"> </div>';
-                        echo'<div class="mt-4 relative"> <span class="absolute p-1 bottom-8 ml-2 bg-white text-gray-400 ">Coulddo</span> <input id="coulddo3" name="coulddo3" type="text" type="text" class="h-12 px-2 w-full border-2 rounded focus:outline-none focus:border-red-600"> </div>';
-                        echo'<div class="mt-4 relative"> <span class="absolute p-1 bottom-8 ml-2 bg-white text-gray-400 ">Coulddo</span> <input id="coulddo4" name="coulddo4" type="text" type="text" class="h-12 px-2 w-full border-2 rounded focus:outline-none focus:border-red-600"> </div>';
-                        echo'<div class="mt-4 relative"> <span class="absolute p-1 bottom-8 ml-2 bg-white text-gray-400 ">Coulddo</span> <input id="coulddo5" name="coulddo5" type="text" class="h-12 px-2 w-full border-2 rounded focus:outline-none focus:border-red-600"> </div>';
-                        echo'<div class="mt-4 relative"> <span class="absolute p-1 bottom-8 ml-2 bg-white text-gray-400 ">Coulddo</span> <input id="coulddo6" name="coulddo6" type="text" type="text" class="h-12 px-2 w-full border-2 rounded focus:outline-none focus:border-red-600"> </div>';
-                        echo'<div class="mt-4"> <button type="submit" class="h-12 w-full bg-red-600 text-white rounded hover:bg-red-700">Click to Submit <i class="fa fa-long-arrow-right"></i></button> </div>';
-                        echo'</form>';
+                        ?>
+                        <div class="mt-4 relative"> <span class="absolute p-1 bottom-8 ml-2 bg-white text-gray-400 ">Goal 1</span> <input id="coulddo1" name="coulddo1" type="text" value="<?php echo $_SESSION["data1"];?>" type="text" class="h-12 px-2 w-full border-2 rounded focus:outline-none focus:border-red-600"></div>
+                        <div class="mt-4 relative"> <span class="absolute p-1 bottom-8 ml-2 bg-white text-gray-400 ">Goal 2</span> <input id="coulddo2" name="coulddo2" type="text" value="<?php echo $_SESSION["data2"];?>" class="h-12 px-2 w-full border-2 rounded focus:outline-none focus:border-red-600"> </div>
+                        <div class="mt-4 relative"> <span class="absolute p-1 bottom-8 ml-2 bg-white text-gray-400 ">Goal 3</span> <input id="coulddo5" name="coulddo3" type="text" value="<?php echo $_SESSION["data3"];?>" class="h-12 px-2 w-full border-2 rounded focus:outline-none focus:border-red-600"> </div>
+<?php
+
+
                         /*echo "<form action='kanbanuser.php'><br>";
                         echo "<input id='coulddo1' name='coulddo1' type='text' class='h-12 px-2 w-full border-2 rounded focus:outline-none focus:border-red-600'>";
                         echo "<textarea id='coulddo2' name='coulddo2' rows='4' cols='30'>Homework</textarea>";
@@ -163,7 +171,7 @@ session_start();
                     ?>
                 </div>
             </div>
-            <!--<div class="flex pt-10 pb-10 space-x-4 overflow-auto text-gray-700">
+            <div class="flex pt-10 pb-10 space-x-4 overflow-auto text-gray-700">
                 <div class="flex flex-col  w-64 bg-gray-200 border border-gray-300">
                     <div class="flex items-center justify-between  h-10 px-2 border-b border-gray-300 bg-white" style="justify-content: center">
                         <span class="block text-sm font-medium">Should do</span>
@@ -171,16 +179,15 @@ session_start();
                     </div>
                     <div class="flex flex-col px-2 pb-2 ">
                         <?php
-                        /*if (isset($_SESSION["userid"])){
-                            echo "<form action='data.php'><br>";
-                            echo "<textarea id='coulddo5' name='coulddo5' rows='4' cols='30'>Study</textarea>";
-                            echo "<textarea id='coulddo6' name='coulddo6' rows='4' cols='30'>Study</textarea>";
-                            echo "<button type='submit' class='h-12 w-full bg-red-600 text-white rounded hover:bg-red-700'>Submit <i class='fa fa-long-arrow-right'></i></button>";
-                            echo "</form>";
+                        if (isset($_SESSION["userid"])){
+                            ?>
+                            <div class="mt-4 relative"> <span class="absolute p-1 bottom-8 ml-2 bg-white text-gray-400 ">Task 1</span> <input id="coulddo3" name="coulddo4" type="text" value="<?php echo $_SESSION["data4"];?>" class="h-12 px-2 w-full border-2 rounded focus:outline-none focus:border-red-600"> </div>
+                            <div class="mt-4 relative"> <span class="absolute p-1 bottom-8 ml-2 bg-white text-gray-400 ">Task 2</span> <input id="coulddo4" name="coulddo5" type="text" value="<?php echo $_SESSION["data5"];?>" class="h-12 px-2 w-full border-2 rounded focus:outline-none focus:border-red-600"> </div>
+                        <?php
                         }else {
                             echo "<div class='cool-animate-gradient-on-hover gradient-animator-alert p-6 mt-2 border border-gray-300 bg-white cursor-pointer'>Study for exam</div>";
                             echo "<div class='cool-animate-gradient-on-hover gradient-animator-alert p-6 mt-2 border border-gray-300 bg-white cursor-pointer'>Fasfa	</div>";
-                        }*/
+                        }
                         ?>
                     </div>
                 </div>
@@ -192,19 +199,41 @@ session_start();
                         </div>
                         <div class="flex flex-col px-2 pb-2 ">
                             <?php
-                            /*if (isset($_SESSION["userid"])){
-                                echo "<form action='data.php'><br>";
-                                echo "<textarea id='coulddo5' name='coulddo5' rows='4' cols='30'>Register for classes</textarea>";
-                                echo "<button type='submit' class='h-12 w-full bg-red-600 text-white rounded hover:bg-red-700'>Submit <i class='fa fa-long-arrow-right'></i></button>";
-                                echo "</form>";
+                            if (isset($_SESSION["userid"])){
+                            ?>
+                                <div class="mt-4 relative"> <span class="absolute p-1 bottom-8 ml-2 bg-white text-gray-400 ">Requirement</span> <input id="coulddo6" name="coulddo6" type="text" value="<?php echo $_SESSION["data6"];?>" class="h-12 px-2 w-full border-2 rounded focus:outline-none focus:border-red-600"> </div>
+                            <?php
                             }else {
                                 echo "<div class='cool-animate-gradient-on-hover gradient-animator-urgent p-6 mt-2 border border-gray-300 bg-white cursor-pointer'>Register for classes</div>";
-                            }*/
+                            }
                             ?>
                         </div>
                     </div>
 					
-					</div>-->
+					</div>
+
+                        <div class="flex flex-col px-2 pb-2 ">
+                            <?php
+                            if (isset($_SESSION["userid"])){
+?>
+                            <div class="flex pt-10 pb-10 space-x-4 flex-shrink	 overflow-auto text-gray-700">
+                                <div class="flex flex-col  w-64 bg-gray-200 border border-gray-300">
+                                    <div class="flex items-center justify-between 0 h-10 px-2 border-b border-gray-300 bg-white" style="justify-content: center">
+                                        <span class="block text-sm font-medium">Submit Board</span>
+
+                                    </div>
+                                <div class="mt-4 pb-4"> <button type="submit" class="h-12 w-full bg-red-600 text-white rounded hover:bg-red-700">Save<i class="fa fa-long-arrow-right"></i></button> </div>
+                                </div>
+                            </div>
+                                <?php
+                            }
+                            ?>
+
+
+                </div>
+                <?php
+                echo'</form>';
+                ?>
 
 					</div>
 

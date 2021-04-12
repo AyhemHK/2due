@@ -21,6 +21,7 @@ try {
         die("Connection failed: " . mysqli_connect_error());
     }
     $sql = "SELECT * FROM users WHERE email =:email";
+    $sqlBoard = "SELECT * FROM board WHERE userid =:userid";
 
     $password = '';
     $result=$conn->prepare($sql);
@@ -30,6 +31,22 @@ try {
             foreach($result as $row){
                 $password=$row['password'];
                 $uId=$row['id'];
+                $username=$row['username'];
+            }
+        }
+    }
+
+    $result2=$conn->prepare($sqlBoard);
+    $executerecord=$result2->execute(array(":userid"=>$uId));
+    if($executerecord){
+        if($result2->rowCount()>0){
+            foreach($result2 as $row){
+                $data1=$row['data1'];
+                $data2=$row['data2'];
+                $data3=$row['data3'];
+                $data4=$row['data4'];
+                $data5=$row['data5'];
+                $data6=$row['data6'];
             }
         }
     }
@@ -38,6 +55,13 @@ try {
         session_id($uId);
         session_start();
         $_SESSION["userid"] = $uId;
+        $_SESSION["username"] = $username;
+        $_SESSION["data1"] = $data1;
+        $_SESSION["data2"] = $data2;
+        $_SESSION["data3"] = $data3;
+        $_SESSION["data4"] = $data4;
+        $_SESSION["data5"] = $data5;
+        $_SESSION["data6"] = $data6;
 
         header("location: http://localhost/2due?session=" . session_id());
         exit();

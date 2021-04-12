@@ -9,6 +9,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $zdatapoint6 = $_POST['coulddo6'];
     session_start();
     $zuserid = session_id();
+
+    $_SESSION["data1"] = $_POST['coulddo1'];
+    $_SESSION["data2"] = $_POST['coulddo2'];
+    $_SESSION["data3"] = $_POST['coulddo3'];
+    $_SESSION["data4"] = $_POST['coulddo4'];
+    $_SESSION["data5"] = $_POST['coulddo5'];
+    $_SESSION["data6"] = $_POST['coulddo6'];
 }
 
 include_once('kanbanclass.php');
